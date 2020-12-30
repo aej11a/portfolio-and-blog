@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro");
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Source Sans Pro";
+  height: 100%;
+}
+
+@property --final-color {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: transparent;
+}
+
+@property --blank-percent {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+
+header {
+  display: flex;
+  align-items: start;
+  justify-content: left;
+  --final-color: yellow;
+  --blank-percent: 5%;
+  background: linear-gradient(
+    90deg,
+    white var(--blank-percent),
+    var(--final-color)
+  );
+  transition: --final-color 3s, --blank-percent 2s;
+}
+
+header.pink {
+  --final-color: deeppink;
+}
+
+header.blue {
+  --final-color: deepskyblue;
+}
+
+header.expand {
+  --blank-percent: -10%;
+}
+
+header.contract {
+  --blank-percent: 30%;
+}
+
+header h1 {
+  margin-left: 10px;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  border-right: 1px solid black;
+  padding-right: 20px;
+}
+
+header img {
+  margin: 10px 10px 10px 15px;
+  height: 60px;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+main {
+  margin: auto;
+  max-width: 1360px;
+}
+
+@property --control-offset {
+  syntax: "<integer>";
+  inherits: false;
+  initial-value: 0;
+}
+
+#tagline {
+  margin: auto 0;
+  padding-left: 15px;
+}
+
+@property --highlight-multiplier {
+  syntax: "<integer>";
+  inherits: false;
+  initial-value: 0;
+}
+
+h2 {
+  margin: 50px;
+  --highlight-multiplier: 0;
+  background-image: paint(highlight);
+  display: inline-block;
+  transition: --highlight-multiplier 0.4s ease-in;
+}
+
+h2:hover {
+  --highlight-multiplier: 100;
+}
+
+@media only screen and (max-width: 600px) {
+  header h1 {
+    font-size: 3rem;
+    letter-spacing: 1.5px;
+  }
+}

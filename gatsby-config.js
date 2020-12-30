@@ -1,6 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: "Portfolio and Blog",
+    title: "Andrew Jones",
+    description: "Andrew Jones's Portfolio and Web-Development Blog",
+    author: "aej11@outlook.com",
+    siteUrl: "https://andrewjones.me",
   },
   plugins: [
     {
@@ -37,5 +40,6 @@ module.exports = {
       },
       __key: "pages",
     },
+    `gatsby-transformer-remark`,
   ],
 };
